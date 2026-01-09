@@ -1,12 +1,33 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root .theme_dark {
+  color-scheme: dark;
+  --background-color: var(--background-color-dark-theme);
+  --header-text: var(--header-text-dark-theme);
+  --text-color: var(--text-color-dark-theme);
+  --accent-color: var(--accent-color-dark-theme);
+  --title-color: var(--title-color-dark-theme);
+  --section-title-color: var(--section-title-color-dark-theme);
+  --hover-button-color: var(--hover-button-color-dark-theme);
+  background-image: url('../images/cover-image-dark.png');
+}
 
-:root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+.theme_dark .req-decoration {
+  display: flex;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --background-color: var(--background-color-dark-theme);
+    --header-text: var(--header-text-dark-theme);
+    --text-color: var(--text-color-dark-theme);
+    --accent-color: var(--accent-color-dark-theme);
+    --title-color: var(--title-color-dark-theme);
+    --section-title-color: var(--section-title-color-dark-theme);
+    --hover-button-color: var(--hover-button-color-dark-theme);
+    background-image: url('../images/cover-image-dark.png');
+  }
+
+  .req-decoration {
+    display: flex;
+  }
 }

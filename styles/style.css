@@ -1,5 +1,324 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой.*/
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.req-decoration {
+  position: absolute;
+  top: clamp(10px, calc(100vw - 375px), 20px);
+  right: clamp(19px, calc(100vw - 375px), 29px);
+  display: none;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.req-decoration::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px #ff0070;
+  text-align: center;
+  background-color: var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+}
+
+.decorated-zone::after,
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.decorated-zone::before {
+  bottom: clamp(10px, calc(100vw - 375px), 20px);
+  left: clamp(10px, calc(100vw - 375px), 20px);
+  border-inline-start: 1px solid var(--section-title-color);
+  border-block-end: 1px solid var(--section-title-color);
+}
+
+.decorated-zone::after {
+  top: clamp(10px, calc(100vw - 375px), 20px);
+  right: clamp(10px, calc(100vw - 375px), 20px);
+  border-inline-end: 1px solid var(--section-title-color);
+  border-block-start: 1px solid var(--section-title-color);
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+  justify-items: end;
+  width: 100%;
+  height: 100vh;
+  padding: 0 clamp(10px, calc(100vw - 375px), 20px);
+}
+
+.header__theme-menu {
+  margin: 75px 0 60px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  width: 100%;
+  border: none;
+  padding: 1.5px 13px;
+  color: var(--section-title-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    outline: 1px solid var(--hover-button-color);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-bottom: 1px solid currentColor;
+    outline: none;
+  }
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+}
+
+.page__title {
+  color: var(--header-text);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: clamp(5.98125rem, 4.7595rem + 5.2126vw, 8.095625rem);
+}
+
+.header__title {
+  justify-self: start;
+  text-shadow: 4px 4px 0 #ff0070;
+}
+
+.header__text {
+  align-self: center;
+  width: clamp(355px, 50%, 491px);
+  margin-bottom: 10px;
+  color: var(--title-color);
+  font-weight: var(--title-weight);
+  line-height: 23.4px;
+  background-color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .header__theme-menu {
+    margin: 192px 0 0;
+  }
+
+  .header__title {
+    position: relative;
+    left: -19px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+    margin-top: 20px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__text {
+    margin-bottom: 0;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 40px 0;
+  padding: 0 clamp(10px, calc(100vw - 375px), 20px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__title {
+  grid-area: title;
+}
+
+.content__title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.content__subtitle {
+  margin-block-end: 10px;
+  font-weight: 400;
+}
+
+.colored-background__title {
+  color: var(--title-color);
+  background-color: var(--accent-color);
+}
+
+.colored-text__title {
+  color: var(--section-title-color);
+}
+
+.section__paragraph-list {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  gap: 20px;
+}
+
+
+.paragraph__text {
+  margin-block-start: 10px;
+  font-size: 18px;
+  line-height: 23.4px;
+}
+
+.paragraph__text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+
+  &:hover {
+    border-bottom: 1px solid currentColor;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid currentColor;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    gap: 80px;
+    margin: 60px 0;
+  }
+
+  .why-hard,
+  .how-to-concentrate {
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    grid-template-areas: "title content";
+    gap: 20px;
+  }
+
+  .section__title {
+    width: clamp(236px, 30vw, 315px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .what-reduces .section__paragraph-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .what-reduces .section__paragraph-list .section__paragraph-list-item {
+    max-width: 314px;
+  }
+}
+
+.concentration-in-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: clamp(10px, calc(100vw - 375px), 20px);
+}
+
+@media (min-width: 768px) {
+  .concentration-in-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    gap: 20px;
+  }
+}
+
+.section_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sunset {
+  grid-area: sunset;
+}
+
+.ice-cream {
+  grid-area: ice-cream;
+}
+
+.tape {
+  grid-area: tape;
+}
+
+.books {
+  grid-area: books;
+}
+
+.street {
+  grid-area: street;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.footer__title {
+  align-self: center;
+  text-shadow: 2px 2px 0px #ff0070;
+}
+
+@media (min-width: 768px) {
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }

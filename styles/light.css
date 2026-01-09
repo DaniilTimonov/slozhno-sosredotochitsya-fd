@@ -1,12 +1,29 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root .theme_light {
+  color-scheme: light;
+  --background-color: var(--background-color-light-theme);
+  --header-text: var(--header-text-light-theme);
+  --text-color: var(--text-color-light-theme);
+  --accent-color: var(--accent-color-light-theme);
+  --title-color: var(--title-color-light-theme);
+  --section-title-color: var(--section-title-color-light-theme);
+  --hover-button-color: var(--hover-button-color-ligth-theme);
+  background-image: url('../images/cover-image-light.png');
 
-:root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+}
+
+.theme_light .req-decoration {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .page {
+    --background-color: var(--background-color-light-theme);
+    --header-text: var(--header-text-light-theme);
+    --text-color: var(--text-color-light-theme);
+    --accent-color: var(--accent-color-light-theme);
+    --title-color: var(--title-color-light-theme);
+    --section-title-color: var(--section-title-color-light-theme);
+    --hover-button-color: var(--hover-button-color-ligth-theme);
+    background-image: url('../images/cover-image-light.png');
+  }
 }
