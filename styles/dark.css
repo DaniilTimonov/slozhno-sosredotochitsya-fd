@@ -1,14 +1,31 @@
 :root .theme_dark {
   color-scheme: dark;
-  --background-color: var(--background-color-dark-theme);
+  --background-color: #000028;
+  background-image: url('../images/cover-image-dark.png');
   --header-text: var(--header-text-dark-theme);
   --text-color: var(--text-color-dark-theme);
   --accent-color: var(--accent-color-dark-theme);
   --title-color: var(--title-color-dark-theme);
   --section-title-color: var(--section-title-color-dark-theme);
   --hover-button-color: var(--hover-button-color-dark-theme);
-  background-image: url('../images/cover-image-dark.png');
 }
+
+.theme_dark .decorated-zone {
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.theme_dark .page,
+.theme_dark .section,
+.theme_dark .main,
+.theme_dark .footer {
+  background-image: none;
+  background-color: #000028;
+}
+
+
 
 .theme_dark .req-decoration {
   display: flex;
@@ -17,14 +34,30 @@
 
 @media (prefers-color-scheme: dark) {
   .page {
-    --background-color: var(--background-color-dark-theme);
+    --background-color: #000028;
     --header-text: var(--header-text-dark-theme);
     --text-color: var(--text-color-dark-theme);
     --accent-color: var(--accent-color-dark-theme);
     --title-color: var(--title-color-dark-theme);
     --section-title-color: var(--section-title-color-dark-theme);
     --hover-button-color: var(--hover-button-color-dark-theme);
+    background-image: none;
+    background-color: #000028;
+  }
+
+  .decorated-zone {
     background-image: url('../images/cover-image-dark.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .page,
+  .section,
+  .main,
+  .footer {
+    background-image: none;
+    background-color: #000028;
   }
 
   .req-decoration {
