@@ -20,10 +20,7 @@
 .theme_dark .page,
 .theme_dark .section,
 .theme_dark .main,
-.theme_dark .footer {
-  background-image: none;
-  background-color: #000028;
-}
+.theme_dark .footer {}
 
 
 
@@ -41,7 +38,6 @@
     --title-color: var(--title-color-dark-theme);
     --section-title-color: var(--section-title-color-dark-theme);
     --hover-button-color: var(--hover-button-color-dark-theme);
-    background-image: none;
     background-color: #000028;
   }
 
@@ -55,10 +51,7 @@
   .page,
   .section,
   .main,
-  .footer {
-    background-image: none;
-    background-color: #000028;
-  }
+  .footer {}
 
   .req-decoration {
     display: flex;
