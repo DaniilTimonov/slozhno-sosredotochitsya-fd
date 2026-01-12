@@ -17,10 +17,6 @@
   background-size: cover;
 }
 
-.theme_dark .page,
-.theme_dark .section,
-.theme_dark .main,
-.theme_dark .footer {}
 
 
 
@@ -48,10 +44,7 @@
     background-size: cover;
   }
 
-  .page,
-  .section,
-  .main,
-  .footer {}
+
 
   .req-decoration {
     display: flex;
