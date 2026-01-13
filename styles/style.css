@@ -139,7 +139,8 @@
   }
 
   .header__text {
-    margin-bottom: 27px;
+    margin-bottom: 20px;
+    transform: translateY(-10px);
     font-size: 18px;
     font-weight: 800;
   }
